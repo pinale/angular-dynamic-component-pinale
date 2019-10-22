@@ -3,6 +3,7 @@ import { Injectable }       from '@angular/core';
 import { DropdownQuestion } from './question-dropdown';
 import { QuestionBase }     from './question-base';
 import { TextboxQuestion }  from './question-textbox';
+import { ChoiceQuestion } from './question-choice';
 
 @Injectable()
 export class QuestionService {
@@ -63,6 +64,19 @@ export class QuestionService {
         type: 'number',
         order: 6
       }),
+
+      new ChoiceQuestion({
+        key: 'brave',
+        label: 'Bravery Rating',
+        options: [
+          {key: 'solid', label:'Solid',  value: 'Solid'},
+          {key: 'great', label:'Great', value: 'Great'},
+          {key: 'good',  label:'Good', value: 'Good'},
+          {key: 'unproven', label:'Unproven', value: 'Unproven'}
+        ],
+        order: 7
+      })
+
 
     ];
 
